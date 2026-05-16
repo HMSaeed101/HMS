@@ -1,0 +1,49 @@
+/* ── PROJECTS PAGE HERO ────────────────────────────────────── */
+
+.cs-hero {
+  padding: 8rem 0 4rem;
+  background: var(--white);
+  border-bottom: 1px solid var(--ink-10);
+}
+
+.cs-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3.2rem, 8vw + 1rem, 5rem);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.cs-title em {
+    font-style: italic;
+    font-weight: 300;
+}
+
+.cs-intro {
+  font-size: 1.25rem;
+  max-width: 600px;
+  color: var(--ink-60);
+}
+
+.cs-back {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  z-index: 100;
+  background: var(--white);
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--ink-10);
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: var(--transition);
+  border-radius: var(--radiussm);
+}
+
+.cs-back:hover {
+  border-color: var(--olive);
+  transform: translateX(-5px);
+  box-shadow: 0 4px 12px var(--box-shadow);
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects & Case Studies | HMS</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Modular Architecture (Relative to Projects Page/) -->
+  <link rel="stylesheet" href="css/main.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+
+  <a href="../index.html" class="cs-back">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+    Back to Portfolio
+  </a>
+
+  <header class="cs-hero">
+    <div class="container reveal">
+      <h1 class="cs-title">Selected <em>Works</em></h1>
+      <p class="cs-intro">A deep dive into the architecture, logic, and philosophy behind my digital builds.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    
+    <!-- CASE STUDY: HOUSE OF WISDOM -->
+    <section class="case-study reveal">
+      <div class="cs-grid">
+        
+        <aside class="cs-meta">
+          <span class="cs-tag">Lead Project</span>
+          <h2 class="cs-sidebar-title">House of Wisdom</h2>
+          <p class="cs-sidebar-desc">A digital library system designed for modularity and scalability using Vanilla JavaScript.</p>
+          
+          <div class="cs-tech-list">
+            <span class="cs-tech-item">ES Modules</span>
+            <span class="cs-tech-item">MVC Pattern</span>
+            <span class="cs-tech-item">Modular CSS</span>
+            <span class="cs-tech-item">Local Storage</span>
+          </div>
+
+          <div class="project-links">
+            <a href="https://github.com/HMSaeed101" class="btn-outline">Source Code</a>
+          </div>
+        </aside>
+
+        <article class="cs-content">
+          <h4>The Challenge</h4>
+          <p>Most beginners build "spaghetti code" where UI logic and data logic are tangled. My goal was to build a system that could grow without breaking, necessitating a clear separation of concerns.</p>
+
+          <h4>Architecture: The MVC Pattern</h4>
+          <p>I implemented a Model-View-Controller architecture. This isn't just a buzzword; it's a structural promise. The <strong>Model</strong> handles the data (books, users), the <strong>View</strong> handles the DOM, and the <strong>Controller</strong> acts as the bridge.</p>
+          
+          <div class="cs-diagram">
+            <strong>Model:</strong> data.js (State Management)<br>
+            <strong>View:</strong> render.js (UI Components)<br>
+            <strong>Controller:</strong> main.js (Event Listeners & Orchestration)
+          </div>
+
+          <h4>Technical Highlight: Modular CSS</h4>
+          <p>To avoid the "Global Namespace CSS" nightmare, I used a modular approach where each component (Navbar, Grid, Modal) has its own stylesheet, orchestrated through a single entry point.</p>
+
+          <div class="cs-code-preview">
+/* main.css entry point */
+@import './base/rules.css';
+@import './components/nav.css';
+@import './components/library-grid.css';
+          </div>
+
+          <h4>The "Storyteller" Insight</h4>
+          <p>Building this project taught me that code is just another language for telling a story. If the architecture is confusing, the "story" of the data gets lost. Clean code is simply a clear narrative.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Placeholder for next project -->
+    <section class="case-study reveal" style="opacity: 0.5;">
+      <div class="cs-grid">
+        <aside class="cs-meta">
+          <span class="cs-tag">Productivity</span>
+          <h2 class="cs-sidebar-title">Personal Finance Tracker</h2>
+          <p class="cs-sidebar-desc">Case study coming soon. Focusing on Data Visualization and Offline Persistence.</p>
+        </aside>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="section" style="text-align: center; color: var(--ink-40);">
+    <div class="container">
+      <p>© 2026 Hafiz Muhammad Saeed — Building Narratives with Code.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

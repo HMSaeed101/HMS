@@ -1,0 +1,104 @@
+/* ── CASE STUDY COMPONENTS ──────────────────────────────────── */
+
+.case-study {
+  padding: 6rem 0;
+  border-bottom: 1px solid var(--ink-10);
+}
+
+.cs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+@media (max-width: 992px) {
+  .cs-grid { 
+    grid-template-columns: 1fr; 
+    gap: 2rem; 
+  }
+}
+
+.cs-meta {
+  position: sticky;
+  top: 6rem;
+}
+
+.cs-tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: var(--case-study-accent);
+  color: var(--white);
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+}
+
+.cs-sidebar-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--ink);
+}
+
+.cs-sidebar-desc {
+  color: var(--ink-60);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.cs-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.cs-tech-item {
+  font-size: 0.85rem;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--ink-10);
+  color: var(--ink-60);
+  border-radius: 4px;
+}
+
+/* Content Styling */
+.cs-content h4 {
+  font-family: 'DM Sans', sans-serif;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--ink-40);
+  margin: 2.5rem 0 1rem;
+}
+
+.cs-content p {
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: var(--ink-60);
+}
+
+.cs-diagram {
+  background: var(--white);
+  padding: 2rem;
+  border-left: 4px solid var(--case-study-accent);
+  margin: 2rem 0;
+  font-family: 'DM Sans', sans-serif;
+  border-radius: 0 var(--radiussm) var(--radiussm) 0;
+  box-shadow: 0 4px 20px var(--ink-10);
+}
+
+.cs-code-preview {
+  background: #1a1a1a;
+  color: #eee;
+  padding: 1.5rem;
+  font-family: 'monospace';
+  font-size: 0.9rem;
+  overflow-x: auto;
+  border-radius: var(--radiussm);
+  margin: 2rem 0;
+  border: 1px solid rgba(255,255,255,0.1);
+}

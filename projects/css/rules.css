@@ -1,0 +1,12 @@
+/* ── PROJECTS PAGE RULES ────────────────────────────────────── */
+
+@import url('../../home/css/rules.css');
+
+:root {
+  --case-study-accent: var(--olive-lt);
+}
+
+/* Page specific adjustments if needed */
+body {
+    background-image: none; /* Cleaner look for case studies */
+}

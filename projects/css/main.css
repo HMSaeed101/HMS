@@ -1,0 +1,8 @@
+/* ── PROJECTS PAGE MAIN ENTRY ────────────────────────────────── */
+
+@import url('rules.css');
+@import url('hero.css');
+@import url('case-study.css');
+
+/* Reusing home-page buttons */
+@import url('../../home/css/sections.css'); 
