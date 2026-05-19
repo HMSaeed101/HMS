@@ -19,11 +19,57 @@
 		<link rel="icon" href="../Assets/Icons/graduation-cap.svg" type="image/svg+xml" />
 
 		<link rel="stylesheet" as="style" href="css/main.css" />
+        <link rel="stylesheet" as="style" href="../home/css/nav-bar.css" />
 
 		<script type="module" src="js/main.js"></script>
+        <script type="module" src="../home/js/main.js"></script>
 	</head>
 
 	<body>
+    <!-- ── SVG Sprite ─────────────────────────────────────── -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+        <symbol id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path fill="#c3d59cb3" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </symbol>
+    </svg>
+
+    <!-- ── NAVIGATION ──────────────────────────────────────────── -->
+    <nav>
+        <div class="container nav-inner">
+            <a href="../index.html" class="nav-logo">HMS.</a>
+
+            <div class="nav-links">
+                <a href="../index.html#about">About</a>
+                <a href="../index.html#projects">Projects</a>
+                <a href="../index.html#academic">Academic</a>
+                <a href="../index.html#skills">Skills</a>
+                <a href="../index.html#photography" class="active">Photography</a>
+                <a href="../index.html#contact">Contact</a>
+
+                <a class="theme-toggle" id="themeToggle">
+                    <svg class="icon" id="themeIcon"><use href="#icon-moon"/></svg>
+                </a>
+            </div>
+
+            <button class="nav-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ── MOBILE MENU ──────────────────────────────────────────── -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="../index.html#about" class="mobile-link">About</a>
+        <a href="../index.html#projects" class="mobile-link">Projects</a>
+        <a href="../index.html#academic" class="mobile-link">Academic</a>
+        <a href="../index.html#skills" class="mobile-link">Skills</a>
+        <a href="../index.html#photography" class="mobile-link active">Photography</a>
+        <a href="../index.html#contact" class="mobile-link">Contact</a>
+        <a class="mobile-link theme-toggle" id="themeToggleMobile">
+            Mode
+        </a>
+    </div>
+
 		<!-- ── HERO ─────────────────────────────────────────────────── -->
 		<section class="pg-hero">
 			<div class="pg-hero-bg" id="heroBg"></div>

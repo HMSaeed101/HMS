@@ -1,21 +1,73 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects & Case Studies | HMS</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-  
-  <!-- Modular Architecture (Relative to Projects Page/) -->
-  <link rel="stylesheet" href="css/main.css">
-  <script type="module" src="js/main.js"></script>
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Projects & Case Studies | HMS</title>
 
-  <a href="../index.html" class="cs-back">
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap"
+			rel="stylesheet"
+		/>
+
+        <link rel="icon" href="../Assets/Icons/graduation-cap.svg" type="image/svg+xml" />
+
+		<!-- Modular Architecture -->
+		<link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="../home/css/nav-bar.css" />
+
+		<script type="module" src="js/main.js"></script>
+        <script type="module" src="../home/js/main.js"></script>
+	</head>
+
+	<body>
+    <!-- ── SVG Sprite ─────────────────────────────────────── -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+        <symbol id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path fill="#c3d59cb3" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </symbol>
+    </svg>
+
+    <!-- ── NAVIGATION ──────────────────────────────────────────── -->
+    <nav>
+        <div class="container nav-inner">
+            <a href="../index.html" class="nav-logo">HMS.</a>
+
+            <div class="nav-links">
+                <a href="../index.html#about">About</a>
+                <a href="../index.html#projects" class="active">Projects</a>
+                <a href="../index.html#academic">Academic</a>
+                <a href="../index.html#skills">Skills</a>
+                <a href="../index.html#photography">Photography</a>
+                <a href="../index.html#contact">Contact</a>
+
+                <a class="theme-toggle" id="themeToggle">
+                    <svg class="icon" id="themeIcon"><use href="#icon-moon"/></svg>
+                </a>
+            </div>
+
+            <button class="nav-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ── MOBILE MENU ──────────────────────────────────────────── -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="../index.html#about" class="mobile-link">About</a>
+        <a href="../index.html#projects" class="mobile-link active">Projects</a>
+        <a href="../index.html#academic" class="mobile-link">Academic</a>
+        <a href="../index.html#skills" class="mobile-link">Skills</a>
+        <a href="../index.html#photography" class="mobile-link">Photography</a>
+        <a href="../index.html#contact" class="mobile-link">Contact</a>
+        <a class="mobile-link theme-toggle" id="themeToggleMobile">
+            Mode
+        </a>
+    </div>
+
+  <a href="../index.html" class="cs-back" style="margin-top: 100px; display: block;">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
     Back to Portfolio
   </a>
