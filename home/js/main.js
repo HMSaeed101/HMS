@@ -1,29 +1,29 @@
-import { projects, academics, skills } from "./data.js";
+import { projects, photos, academics, skills } from "./data.js";
 import {
 	renderProjects,
-	// renderPhotos,
+	renderPhotos,
 	renderAcademics,
 	renderSkills,
 } from "./render.js";
 import {
-	// initLightbox,
+	initLightbox,
 	initMobileMenu,
 	initScrollReveal,
 	initScrollSpy,
-	// initPhotoGrid,
+	initPhotoGrid,
 	initBackToTop,
 	initThemeToggle,
 } from "./utils.js";
 
 // Controller fetches from model, passes to view
 renderProjects(projects);
-// renderPhotos(photos);
+renderPhotos(photos);
 renderAcademics(academics);
 renderSkills(skills);
 
 // Controller wires view dependencies together
-// const openLightbox = initLightbox();
-// initPhotoGrid(openLightbox);
+const openLightbox = initLightbox();
+initPhotoGrid(openLightbox);
 initMobileMenu();
 initScrollReveal();
 initScrollSpy();

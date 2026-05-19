@@ -1,4 +1,4 @@
-import { photos } from "../data/photos.js";
+import { photos } from "./data.js";
 import { getVisibleItems } from "./utils.js";
 
 export function initLightbox(grid) {
@@ -6,6 +6,7 @@ export function initLightbox(grid) {
 	const lbImg = document.getElementById("pgLbImg");
 	const lbCat = document.getElementById("pgLbCat");
 	const lbTitle = document.getElementById("pgLbTitle");
+	const lbExif = document.getElementById("pgLbExif");
 	const lbDesc = document.getElementById("pgLbDesc");
 	const lbCounter = document.getElementById("pgLbCounter");
 	const lbCaption = document.getElementById("pgLbCaption");
@@ -13,20 +14,40 @@ export function initLightbox(grid) {
 	let currentIdx = 0;
 	let visibleItems = [];
 
-	function showLbPhoto() {
+	let uiTimeout;
+	function showLbUI() {
+		lb.classList.remove("distraction-free");
+		clearTimeout(uiTimeout);
+		uiTimeout = setTimeout(() => {
+			if (lb.classList.contains("open")) {
+				lb.classList.add("distraction-free");
+			}
+		}, 3000);
+	}
+
+	function showLbPhoto(dir = 0) {
 		const item = visibleItems[currentIdx];
 		const photo = photos[parseInt(item.dataset.index)];
+		
 		lbImg.classList.add("switching");
+        lbCaption.classList.remove("show");
+
 		setTimeout(() => {
 			lbImg.src = photo.src;
 			lbImg.alt = photo.caption;
 			lbCat.textContent = photo.category || "";
 			lbTitle.textContent = photo.caption;
+			lbExif.textContent = photo.exif || "";
+			lbExif.style.display = photo.exif ? "" : "none";
 			lbDesc.textContent = photo.desc || "";
 			lbDesc.style.display = photo.desc ? "" : "none";
 			lbCounter.textContent = `${currentIdx + 1} / ${visibleItems.length}`;
-			lbImg.classList.remove("switching");
-		}, 180);
+			
+            lbImg.onload = () => {
+                lbImg.classList.remove("switching");
+                setTimeout(() => lbCaption.classList.add("show"), 100);
+            };
+		}, 250);
 	}
 
 	function openLb(idx) {
@@ -35,19 +56,22 @@ export function initLightbox(grid) {
 		showLbPhoto();
 		lb.classList.add("open");
 		document.body.style.overflow = "hidden";
-		setTimeout(() => lbCaption.classList.add("show"), 400);
+        showLbUI();
 	}
 
 	function closeLb() {
 		lb.classList.remove("open");
+        lb.classList.remove("distraction-free");
 		document.body.style.overflow = "";
 		lbCaption.classList.remove("show");
+        clearTimeout(uiTimeout);
 	}
 
 	function navigate(dir) {
 		currentIdx =
 			(currentIdx + dir + visibleItems.length) % visibleItems.length;
-		showLbPhoto();
+		showLbPhoto(dir);
+        showLbUI();
 	}
 
 	// Events
@@ -58,6 +82,9 @@ export function initLightbox(grid) {
 		const idx = visible.indexOf(item);
 		if (idx !== -1) openLb(idx);
 	});
+
+    lb.addEventListener("mousemove", showLbUI);
+    lb.addEventListener("touchstart", showLbUI);
 
 	document.getElementById("pgLbClose")?.addEventListener("click", closeLb);
 	lb?.addEventListener("click", (e) => {

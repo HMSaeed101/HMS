@@ -19,20 +19,20 @@ export function renderProjects(projects) {
   });
 }
 
-// export function renderPhotos(photos) {
-//   renderList('photo-grid', photos, (ph) => {
-//     const item = cloneTemplate('tpl-photo-item');
+export function renderPhotos(photos) {
+  renderList('photo-grid', photos, (ph) => {
+    const item = cloneTemplate('tpl-photo-item');
 
-//     item.dataset.src                                  = ph.src;
-//     item.dataset.caption                              = ph.caption;
-//     item.dataset.category                             = ph.category || '';
-//     item.querySelector('img').src                     = ph.src;
-//     item.querySelector('img').alt                     = ph.caption;
-//     item.querySelector('.photo-caption').textContent  = ph.caption;
+    item.dataset.src                                  = ph.src;
+    item.dataset.caption                              = ph.caption;
+    item.dataset.category                             = ph.category || '';
+    item.querySelector('img').src                     = ph.src;
+    item.querySelector('img').alt                     = ph.caption;
+    item.querySelector('.photo-caption').textContent  = ph.caption;
 
-//     return item;
-//   });
-// }
+    return item;
+  });
+}
 
 export function renderAcademics(academics) {
   renderList('academic-list', academics, (a) => {

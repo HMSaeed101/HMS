@@ -1,82 +1,83 @@
 /* ── UTILS ────────────────────────────────────────────────── */
 
 /* ── LIGHTBOX (with prev/next navigation) ─────────────────── */
-// export function initLightbox() {
-// 	const lightbox = document.getElementById("lightbox");
-// 	const lightboxImg = document.getElementById("lightboxImg");
-// 	const prevBtn = document.getElementById("lightboxPrev");
-// 	const nextBtn = document.getElementById("lightboxNext");
-// 	const counter = document.getElementById("lightboxCounter");
+export function initLightbox() {
+	const lightbox = document.getElementById("lightbox");
+	const lightboxImg = document.getElementById("lightboxImg");
+	const prevBtn = document.getElementById("lightboxPrev");
+	const nextBtn = document.getElementById("lightboxNext");
+	const counter = document.getElementById("lightboxCounter");
 
-// 	let currentIndex = 0;
-// 	let items = [];
+	let currentIndex = 0;
+	let items = [];
 
-// 	function openLightbox(src, alt, index, allItems) {
-// 		items = allItems || [];
-// 		currentIndex = index ?? 0;
-// 		lightboxImg.src = src;
-// 		lightboxImg.alt = alt;
-// 		lightbox.classList.add("open");
-// 		document.body.style.overflow = "hidden";
-// 		updateControls();
-// 	}
+	function openLightbox(src, alt, index, allItems) {
+		items = allItems || [];
+		currentIndex = index ?? 0;
+		lightboxImg.src = src;
+		lightboxImg.alt = alt;
+		lightbox.classList.add("open");
+		document.body.style.overflow = "hidden";
+		updateControls();
+	}
 
-// 	function closeLightbox() {
-// 		lightbox.classList.remove("open");
-// 		document.body.style.overflow = "";
-// 	}
+	function closeLightbox() {
+		lightbox.classList.remove("open");
+		document.body.style.overflow = "";
+	}
 
-// 	function navigate(dir) {
-// 		currentIndex = (currentIndex + dir + items.length) % items.length;
-// 		const item = items[currentIndex];
-// 		lightboxImg.classList.add("switching");
-// 		setTimeout(() => {
-// 			lightboxImg.src = item.dataset.src;
-// 			lightboxImg.alt = item.dataset.caption;
-// 			lightboxImg.classList.remove("switching");
-// 		}, 150);
-// 		updateControls();
-// 	}
+	function navigate(dir) {
+		currentIndex = (currentIndex + dir + items.length) % items.length;
+		const item = items[currentIndex];
+		lightboxImg.classList.add("switching");
+		setTimeout(() => {
+			lightboxImg.src = item.dataset.src;
+			lightboxImg.alt = item.dataset.caption;
+			lightboxImg.classList.remove("switching");
+		}, 150);
+		updateControls();
+	}
 
-// 	function updateControls() {
-// 		if (items.length <= 1) {
-// 			prevBtn.style.display = "none";
-// 			nextBtn.style.display = "none";
-// 			counter.style.display = "none";
-// 		} else {
-// 			prevBtn.style.display = "";
-// 			nextBtn.style.display = "";
-// 			counter.style.display = "";
-// 			counter.textContent = `${currentIndex + 1} / ${items.length}`;
-// 		}
-// 	}
+	function updateControls() {
+		if (items.length <= 1) {
+			prevBtn.style.display = "none";
+			nextBtn.style.display = "none";
+			counter.style.display = "none";
+		} else {
+			prevBtn.style.display = "";
+			nextBtn.style.display = "";
+			counter.style.display = "";
+			counter.textContent = `${currentIndex + 1} / ${items.length}`;
+		}
+	}
 
-// 	document
-// 		.getElementById("lightboxClose")
-// 		.addEventListener("click", closeLightbox);
-// 	lightbox.addEventListener("click", (e) => {
-// 		if (e.target === lightbox) closeLightbox();
-// 	});
-// 	prevBtn.addEventListener("click", (e) => {
-// 		e.stopPropagation();
-// 		navigate(-1);
-// 	});
-// 	nextBtn.addEventListener("click", (e) => {
-// 		e.stopPropagation();
-// 		navigate(1);
-// 	});
+	document
+		.getElementById("lightboxClose")
+		.addEventListener("click", closeLightbox);
+	lightbox.addEventListener("click", (e) => {
+		if (e.target === lightbox) closeLightbox();
+	});
+	prevBtn.addEventListener("click", (e) => {
+		e.stopPropagation();
+		navigate(-1);
+	});
+	nextBtn.addEventListener("click", (e) => {
+		e.stopPropagation();
+		navigate(1);
+	});
 
-// 	document.addEventListener("keydown", (e) => {
-// 		if (!lightbox.classList.contains("open")) return;
-// 		if (e.key === "Escape") closeLightbox();
-// 		if (e.key === "ArrowLeft") navigate(-1);
-// 		if (e.key === "ArrowRight") navigate(1);
-// 	});
+	document.addEventListener("keydown", (e) => {
+		if (!lightbox.classList.contains("open")) return;
+		if (e.key === "Escape") closeLightbox();
+		if (e.key === "ArrowLeft") navigate(-1);
+		if (e.key === "ArrowRight") navigate(1);
+	});
 
-// 	return openLightbox;
-// }
+	return openLightbox;
+}
 
 /* ── MOBILE MENU ──────────────────────────────────────────── */
+// ... (omitting for brevity in prompt, but I will replace the whole block)
 export function initMobileMenu() {
 	const menuToggle = document.getElementById("menuToggle");
 	const mobileMenu = document.getElementById("mobileMenu");
@@ -153,17 +154,17 @@ export function initScrollSpy() {
 }
 
 /* ── PHOTO GRID ─────────────────────────────────────────── */
-// export function initPhotoGrid(openLightbox) {
-// 	const grid = document.getElementById("photo-grid");
+export function initPhotoGrid(openLightbox) {
+	const grid = document.getElementById("photo-grid");
 
-// 	grid.addEventListener("click", (e) => {
-// 		const item = e.target.closest(".photo-item");
-// 		if (!item) return;
-// 		const all = Array.from(grid.querySelectorAll(".photo-item"));
-// 		const index = all.indexOf(item);
-// 		openLightbox(item.dataset.src, item.dataset.caption, index, all);
-// 	});
-// }
+	grid.addEventListener("click", (e) => {
+		const item = e.target.closest(".photo-item");
+		if (!item) return;
+		const all = Array.from(grid.querySelectorAll(".photo-item"));
+		const index = all.indexOf(item);
+		openLightbox(item.dataset.src, item.dataset.caption, index, all);
+	});
+}
 
 /* ── Render List ─────────────────────────────────────────── */
 export function renderList(containerId, dataArray, buildElement) {

@@ -1,5 +1,5 @@
 import { photos } from "./data.js";
-import { animateCount } from "./utils.js";
+import { animateCount, initTilt } from "./utils.js";
 import { renderFilters, renderGrid, updateVisibleCount } from "./render.js";
 import { initLightbox } from "./lightbox.js";
 
@@ -26,6 +26,9 @@ const pgEmpty = document.getElementById("pgEmpty");
 renderFilters();
 renderGrid(grid);
 updateVisibleCount(grid, visibleCount, pgEmpty);
+
+// Initialize interaction
+initTilt(".pg-item");
 
 // Filter logic (kept here because it needs to call updateVisibleCount)
 document.querySelector(".pg-filter-left").addEventListener("click", (e) => {

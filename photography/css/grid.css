@@ -17,6 +17,7 @@
 .pg-grid {
 	columns: 3 300px;
 	column-gap: 1.25rem;
+    perspective: 1200px;
 }
 
 .pg-item {
@@ -28,22 +29,28 @@
 	cursor: pointer;
 	transition:
 		opacity 0.4s,
-		transform 0.3s;
+		transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    transform-style: preserve-3d;
 }
 .pg-item.hidden {
 	display: none;
-}
-.pg-item:hover {
-	transform: translateY(-4px);
 }
 
 .pg-item img {
 	width: 100%;
 	display: block;
-	transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	transition: 
+        transform 0.8s cubic-bezier(0.23, 1, 0.32, 1),
+        opacity 0.8s ease;
+    opacity: 0;
 }
+
+.pg-item img.loaded {
+    opacity: 1;
+}
+
 .pg-item:hover img {
-	transform: scale(1.05);
+	transform: scale(1.1);
 }
 
 /* Overlay */
@@ -84,6 +91,14 @@
 	line-height: 1.3;
 }
 
+.pg-overlay-exif {
+	font-size: 0.65rem;
+	color: rgba(181, 149, 106, 0.9);
+	letter-spacing: 0.05em;
+	margin-top: 0.2rem;
+	font-weight: 500;
+}
+
 .pg-overlay-desc {
 	color: rgba(247, 244, 239, 0.65);
 	font-size: 0.78rem;
@@ -116,4 +131,45 @@
 .pg-item:hover .pg-zoom-badge {
 	opacity: 1;
 	transform: scale(1);
+}
+
+/* Empty State Styling */
+.pg-empty {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem 2rem;
+    text-align: center;
+    background: rgba(247, 244, 239, 0.02);
+    border: 1px dashed rgba(181, 149, 106, 0.2);
+    border-radius: 40px;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.pg-empty.show {
+    display: flex;
+}
+
+.pg-empty-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    filter: sepia(1) saturate(0.5) opacity(0.4);
+}
+
+.pg-empty-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2.2rem;
+    color: var(--ink-60);
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+}
+
+.pg-empty-sub {
+    font-size: 0.95rem;
+    color: var(--ink-40);
+    font-style: italic;
+    max-width: 340px;
+    line-height: 1.6;
 }

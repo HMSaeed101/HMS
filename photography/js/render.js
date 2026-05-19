@@ -1,4 +1,4 @@
-import { photos } from "../data/photos.js";
+import { photos } from "./data.js";
 import { countOf, getVisibleItems } from "./utils.js";
 
 const cats = ["all", ...new Set(photos.map((p) => p.category).filter(Boolean))];
@@ -26,10 +26,11 @@ export function renderGrid(grid) {
 		item.dataset.category = photo.category || "";
 		item.dataset.index = i;
 		item.innerHTML = `
-      <img src="${photo.src}" alt="${photo.caption}" loading="${i < 6 ? "eager" : "lazy"}">
+      <img src="${photo.src}" alt="${photo.caption}" loading="${i < 6 ? "eager" : "lazy"}" onload="this.classList.add('loaded')">
       <div class="pg-overlay">
         <div class="pg-overlay-cat">${photo.category || ""}</div>
         <div class="pg-overlay-caption">${photo.caption}</div>
+        ${photo.exif ? `<div class="pg-overlay-exif">${photo.exif}</div>` : ""}
         ${photo.desc ? `<div class="pg-overlay-desc">${photo.desc}</div>` : ""}
       </div>
       <div class="pg-zoom-badge">…</div>
