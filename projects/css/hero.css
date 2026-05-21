@@ -16,7 +16,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: 
+  background:
     radial-gradient(circle at 20% 30%, rgba(114, 134, 73, 0.15) 0%, transparent 50%),
     linear-gradient(to bottom, rgba(13, 13, 11, 0.6) 0%, rgba(13, 13, 11, 0.95) 100%);
   z-index: 1;
@@ -39,18 +39,6 @@
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
-}
-
-.cs-hero-eyebrow {
-  font-size: 0.68rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: rgba(181, 149, 106, 0.9);
-  font-weight: 500;
-  margin-bottom: 1rem;
-  opacity: 0;
-  transform: translateY(16px);
-  animation: fadeUp 0.7s 0.2s forwards;
 }
 
 .cs-title {
@@ -117,9 +105,9 @@
 /* Standardized Back Link (pg-back style) */
 .cs-back {
   position: absolute;
-  top: 1.5rem;
+  top: 5rem;
   left: clamp(1.25rem, 5vw, 4rem);
-  z-index: 10;
+  z-index: 1000;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -147,7 +135,7 @@
 }
 
 .cs-back:hover svg {
-  transform: translateX(-3px);
+  transform: translateX(-4px);
 }
 
 @keyframes fadeUp {
