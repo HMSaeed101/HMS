@@ -36,17 +36,4 @@ Portfolio/
 └── projects/          # Detailed project and academic pages
 ```
 
-## 📖 My Story
-
-I entered Computer Science through an unconventional path—starting with a Pre-Medical background and a self-directed gap year. This journey taught me that the most profound truths aren't found within a single discipline, but in the threads that tie them together.
-
-## 📬 Contact
-
-- **LinkedIn**: hmsaeed
-- **GitHub**: @HMSaeed101
-- **Email**: hafizmsaeed101@gmail.com
-- **WhatsApp**: +92 321 9798860
-
----
-
 _Built with care by Hafiz Muhammad Saeed._
