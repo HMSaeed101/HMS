@@ -15,7 +15,7 @@ import { initLightbox } from "./components/Lightbox.js";
 document.addEventListener("DOMContentLoaded", () => {
 	// 1. Inject Components
 	initIcons();
-	initNavigation({ activePage: "home" });
+	initNavigation();
 	initFooter();
 
 	// 2. UI Logic (Must run after injection)

@@ -5,20 +5,20 @@ import { initIcons } from './components/Icons.js';
 import { initNavigation } from './components/Navigation.js';
 import { initFooter } from './components/Footer.js';
 
-import { 
-    initThemeToggle, 
-    initMobileMenu 
+import {
+    initThemeToggle,
+    initMobileMenu
 } from './utils/ui.js';
-import { 
-    initScrollReveal, 
-    initScrollSpy 
+import {
+    initScrollReveal,
+    initScrollSpy
 } from './utils/scroll.js';
-import { 
-    renderList, 
-    cloneTemplate 
+import {
+    renderList,
+    cloneTemplate
 } from './utils/dom.js';
-import { 
-    animateCount 
+import {
+    animateCount
 } from './utils/animations.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 1. Inject Components
     initIcons();
-    initNavigation({ pathPrefix: '../', activePage: 'projects' });
+    initNavigation({ pathPrefix: '../' });
     initFooter({ pathPrefix: '../' });
 
     // 2. UI Logic
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Hero Stats
     const totalProjects = caseStudies.filter(s => !s.isPlaceholder).length;
     const allTech = new Set(caseStudies.flatMap(s => s.techStack || []));
-    
+
     animateCount(document.getElementById('statProjects'), totalProjects, 800);
     animateCount(document.getElementById('statTech'), allTech.size, 1000);
 

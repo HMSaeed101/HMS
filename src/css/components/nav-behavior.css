@@ -1,0 +1,14 @@
+/* ── NAVIGATION SCROLL BEHAVIOR ─────────────────────────── */
+
+nav {
+	/* Smooth transition for the transform property */
+	transition:
+		transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+		background-color 0.3s ease,
+		box-shadow 0.3s ease;
+}
+
+/* Class applied when scrolling down */
+nav.nav-hidden {
+	transform: translateY(-100%);
+}
