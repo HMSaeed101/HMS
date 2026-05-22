@@ -1,60 +1,23 @@
-  UX Audit & Testing Report: HMS Portfolio
 
-  1. Core Functionality & Navigation
-   * 🔴 Critical Issue: Broken Internal Links
-       * Links such as "Details →" (Projects), "Gallery →" (Photography),
-         and "View All →" (Academics) on the homepage fail to navigate
-         when clicked. They appear to be intercepted or incorrectly
-         linked, requiring manual URL entry to reach those sections.
-   * 🔴 Critical Issue: 404 - Page Not Found
-       * The link to projects/academics.html returns a "Cannot GET"
-         error. This is a significant friction point for users looking
-         for your credentials.
-   * 🟡  Navigation Stall: "Toggle Menu" & "Back to Top"
-       * The Mobile Menu Toggle did not reveal any navigation links in
-         the tested viewport.
-       * The Back to Top button caused a timeout during testing,
-         suggesting either a broken script or an excessively long
-         animation that blocks the UI.
+- Live updates card, NOW, What  im currently focused on, floating over side screen for readers to read
+- Something map-like background for location things
+- Reactive Typography
+- Lines Squiggle - Blobs
 
-  2. Interactive Consistency (Projects & Photography)
-   * 🟠  Broken Filtering Logic
-       * On both the Projects and Photography pages, the filter buttons
-         (e.g., "Macro", "Lead Project") update the statistics in the
-         banner (e.g., "1 Projects 4 Technologies") but do not actually
-         filter the items on the page. All items remain visible
-         regardless of the selected filter.
-   * 🟡  UI Feedback Inconsistency
-       * The Photography page initially displays "3 Photographs" while
-         actually showing 15. Clicking a filter updates the count but
-         doesn't change the gallery view, leading to user confusion.
+==============================================
 
-  3. Visual & Content Experience
-   * 🟢  Strength: Aesthetic & Identity
-       * The visual design is clean, professional, and consistent with
-         the "Builder & Photographer" persona. The use of macro
-         photography adds a unique personal touch.
-   * 🟢  Strength: Storytelling
-       * The "My Story" section is well-written and provides a strong
-         personal narrative that bridges the gap between medicine and
-         computer science.
+Navigation Stall:
+"Toggle Menu" & "Back to Top"
+The Mobile Menu Toggle did not reveal any navigation links in the tested viewport. The Back to Top button caused a timeout during testing, suggesting either a broken script or an excessively long animation that blocks the UI.
 
-  ---
+=====================================
 
-  Recommendations for Improvement
-   1. Fix Routing: Ensure that relative paths (like projects/ and
-      photography/) are correctly handled by your server and that the
-      file names match (e.g., check if academics.html is spelled
-      correctly).
-   2. Implement Filtering: Connect your filter button event listeners to
-      a function that toggles the display: none property (or equivalent)
-      on the project/photo cards based on their category classes.
-   3. Optimize Scripts: Review the JavaScript for the "Back to Top" and
-      "Mobile Menu" to ensure they aren't causing execution blocks.
-   4. Validate Assets: Check the Download CV path; while it didn't crash,
-      ensure the ../Docs/ folder is correctly structured on your
-      production server.
+Recommendations
 
-  Overall Status: The site has a high-quality visual foundation but
-  requires technical "plumbing" to ensure the interactive elements match
-  the visual promise.
+1. Fix Routing: Ensure that relative paths (like projects/ and photography/) are correctly handled by your server and that the file names match (e.g., check if academics html is spelled correctly).
+
+2. Implement Filtering: Connect your filter button event listeners to a function that toggles the display: none property (or equivalent) on the project/photo cards based on their category classes.
+
+3. Optimize Scripts: Review the JavaScript for the "Back to Top" and "Mobile Menu" to ensure they aren't causing execution blocks.
+
+4. Validate Assets: Check the Download CV path; while it didn't crash, ensure the ../Docs/ folder is correctly structured on your production server.

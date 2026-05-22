@@ -18,9 +18,9 @@
 			type="image/svg+xml"
 		/>
 
-		<!-- Modular Architecture -->
 		<link rel="stylesheet" href="css/main.css" />
 		<link rel="stylesheet" href="../home/css/nav-bar.css" />
+		<link rel="stylesheet" href="../home/css/responsiveness.css" />
 
 		<script type="module" src="js/main.js"></script>
 		<script type="module" src="../home/js/main.js"></script>
@@ -106,7 +106,10 @@
 			</symbol>
 		</svg>
 
-		<!-- ── NAVIGATION ──────────────────────────────────────────── -->
+		<!-- SCROLL PROGRESS -->
+		<div class="scroll-progress" id="scrollProgress"></div>
+
+		<!-- NAVIGATION  -->
 		<nav>
 			<div class="container nav-inner">
 				<a href="../index.html" class="nav-logo">HMS.</a>
@@ -114,7 +117,6 @@
 				<div class="nav-links">
 					<a href="../index.html">Home</a>
 					<a href="../photography/index.html">Photography</a>
-					<a href="../blogs.html">Blog</a>
 					<a href="../index.html#contact">Contact</a>
 
 					<a class="theme-toggle" id="themeToggle">
@@ -134,23 +136,19 @@
 			</div>
 		</nav>
 
-		<!-- ── MOBILE MENU ──────────────────────────────────────────── -->
+		<!-- MOBILE MENU -->
 		<div class="mobile-menu" id="mobileMenu">
 			<a href="../index.html" class="mobile-link">Home</a>
 			<a href="../photography/index.html" class="mobile-link"
 				>Photography</a
 			>
-			<a href="../blogs.html" class="mobile-link">Blog</a>
 			<a href="../index.html#contact" class="mobile-link">Contact</a>
 			<a class="mobile-link theme-toggle" id="themeToggleMobile">
 				Mode
 			</a>
 		</div>
 
-		<a
-			href="../index.html"
-			class="cs-back"
-		>
+		<a href="../index.html" class="cs-back">
 			<svg
 				width="16"
 				height="16"
@@ -166,6 +164,7 @@
 			Back to Portfolio
 		</a>
 
+		<!-- Hero -->
 		<header class="cs-hero">
 			<div class="cs-hero-content">
 				<h1 class="cs-title">Selected <em>Works</em></h1>
