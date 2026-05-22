@@ -1,24 +1,26 @@
 /* ── NAVIGATION COMPONENT ────────────────────────────────────────── */
 
+import { initBackToTop } from "./BackToTop.js";
+
 /**
  * Injects the navigation bar and mobile menu.
- * @param {Object} options 
+ * @param {Object} options
  * @param {string} options.pathPrefix - Prefix for links (e.g. '../')
  * @param {string} options.activePage - Identifier for the active page
  */
-export function initNavigation({ pathPrefix = '', activePage = 'home' } = {}) {
-    const navHTML = `
+export function initNavigation({ pathPrefix = "", activePage = "home" } = {}) {
+	const navHTML = `
     <nav>
         <div class="container nav-inner">
             <a href="${pathPrefix}index.html" class="nav-logo">HMS.</a>
 
             <div class="nav-links">
-                <a href="${pathPrefix}index.html#about" class="${activePage === 'home' ? 'active' : ''}">About</a>
-                <a href="${pathPrefix}projects/index.html" class="${activePage === 'projects' ? 'active' : ''}">Projects</a>
-                <a href="${pathPrefix}index.html#academic" class="${activePage === 'home' ? 'active' : ''}">Academic</a>
-                <a href="${pathPrefix}index.html#hobbies" class="${activePage === 'home' ? 'active' : ''}">Hobbies</a>
-                <a href="${pathPrefix}index.html#skills" class="${activePage === 'home' ? 'active' : ''}">Skills</a>
-                <a href="${pathPrefix}index.html#contact" class="${activePage === 'home' ? 'active' : ''}">Contact</a>
+                <a href="${pathPrefix}index.html#about" class="${activePage === "home" ? "active" : ""}">About</a>
+                <a href="${pathPrefix}projects/index.html" class="${activePage === "projects" ? "active" : ""}">Projects</a>
+                <a href="${pathPrefix}index.html#academic" class="${activePage === "home" ? "active" : ""}">Academic</a>
+                <a href="${pathPrefix}index.html#hobbies" class="${activePage === "home" ? "active" : ""}">Hobbies</a>
+                <a href="${pathPrefix}index.html#skills" class="${activePage === "home" ? "active" : ""}">Skills</a>
+                <a href="${pathPrefix}index.html#contact" class="${activePage === "home" ? "active" : ""}">Contact</a>
 
                 <a class="theme-toggle" id="themeToggle">
                     <svg class="icon" id="themeIcon"><use href="#icon-moon"/></svg>
@@ -59,6 +61,9 @@ export function initNavigation({ pathPrefix = '', activePage = 'home' } = {}) {
     </div>
     `;
 
-    // Injects before the first section or hero
-    document.body.insertAdjacentHTML('afterbegin', navHTML);
+	// Injects before the first section or hero
+	document.body.insertAdjacentHTML("afterbegin", navHTML);
+
+	// Automate: Every page with navigation now gets the Back to Top button
+	initBackToTop();
 }

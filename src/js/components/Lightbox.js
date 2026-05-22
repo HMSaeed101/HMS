@@ -6,18 +6,52 @@ export function initLightbox() {
 	const prevBtn = document.getElementById("lightboxPrev");
 	const nextBtn = document.getElementById("lightboxNext");
 	const counter = document.getElementById("lightboxCounter");
+	const loader = document.getElementById("lightboxLoader");
+	const lbTitle = document.getElementById("pgLbTitle");
 
 	if (!lightbox || !lightboxImg) return null;
 
 	let currentIndex = 0;
 	let items = [];
+	const TRANSITION_SPEED = 200; // Match this with CSS transition duration
+
+	// Centralized logic to update the title from various data sources
+	function updateTitle(item) {
+		if (!item) {
+			console.warn("Lightbox: No item provided to updateTitle");
+			return;
+		}
+
+		const title =
+			item.caption || item.dataset?.caption || item.alt || "Untitled";
+		if (lbTitle) lbTitle.textContent = title;
+	}
+
+	// Helper to hide loader once image is ready
+	lightboxImg.onload = () => {
+		if (loader) loader.style.display = "none";
+		lightboxImg.classList.remove("switching");
+	};
 
 	function openLightbox(src, alt, index, allItems) {
 		items = allItems || [];
 		currentIndex = index ?? 0;
+
+		// Show loader before setting src
+		if (loader) loader.style.display = "block";
+
+		// Reset image state
+		lightboxImg.style.opacity = "0";
+
+		// Use the centralized handler for everything
+		updateTitle(items[currentIndex] || { src, alt });
 		lightboxImg.src = src;
-		lightboxImg.alt = alt;
+
 		lightbox.classList.add("open");
+		setTimeout(() => {
+			lightboxImg.style.opacity = "1";
+		}, 50);
+
 		document.body.style.overflow = "hidden";
 		updateControls();
 	}
@@ -30,12 +64,16 @@ export function initLightbox() {
 	function navigate(dir) {
 		currentIndex = (currentIndex + dir + items.length) % items.length;
 		const item = items[currentIndex];
+
+		// Show loader for the next image
+		if (loader) loader.style.display = "block";
+
 		lightboxImg.classList.add("switching");
+
 		setTimeout(() => {
-			lightboxImg.src = item.dataset.src || item.src; // Handle both dataset and direct src
-			lightboxImg.alt = item.dataset.caption || item.alt;
-			lightboxImg.classList.remove("switching");
-		}, 150);
+			lightboxImg.src = item.src || item.dataset?.src;
+			updateTitle(item);
+		}, TRANSITION_SPEED);
 		updateControls();
 	}
 

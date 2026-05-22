@@ -27,7 +27,6 @@
 	</head>
 
 	<body>
-
 		<!-- ── HERO ─────────────────────────────────────────────────── -->
 		<section class="pg-hero">
 			<div class="pg-hero-bg" id="heroBg"></div>
@@ -102,16 +101,16 @@
 			aria-modal="true"
 			aria-label="Photo viewer"
 		>
+			<!-- Loading Spinner -->
+			<div class="pg-lb-loader" id="lightboxLoader"></div>
+
 			<div class="pg-lb-inner">
-				<div class="pg-lb-img-wrap" id="pgLbWrap">
+				<figure class="pg-lb-img-wrap" id="pgLbWrap">
 					<img class="pg-lb-img" id="lightboxImg" src="" alt="" />
-					<div class="pg-lb-caption" id="pgLbCaption">
-						<div class="pg-lb-cat" id="pgLbCat"></div>
-						<div class="pg-lb-title" id="pgLbTitle"></div>
-						<div class="pg-lb-exif" id="pgLbExif"></div>
-						<div class="pg-lb-desc" id="pgLbDesc"></div>
-					</div>
-				</div>
+					<figcaption class="pg-lb-caption" id="pgLbCaption">
+						<h2 class="pg-lb-title" id="pgLbTitle"></h2>
+					</figcaption>
+				</figure>
 			</div>
 
 			<button class="pg-lb-close" id="lightboxClose" aria-label="Close">
@@ -154,8 +153,6 @@
 				</svg>
 			</button>
 			<div class="pg-lb-counter" id="lightboxCounter"></div>
-			<div class="pg-lb-hint">← → navigate &nbsp;·&nbsp; Esc close</div>
 		</div>
-
 	</body>
 </html>

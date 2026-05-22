@@ -1,0 +1,158 @@
+/* ── LIGHTBOX LAYOUT & UI ─────────────────────────────────────── */
+
+.pg-lightbox {
+	display: none;
+	position: fixed;
+	inset: 0;
+	background: rgba(10, 10, 10, 0.98);
+	z-index: 3000;
+	justify-content: center;
+	align-items: center;
+	padding: 2rem;
+	backdrop-filter: blur(15px);
+	animation: lb-fade-in 0.3s ease-out;
+	transform: translateZ(0);
+}
+
+.pg-lightbox.open {
+	display: flex;
+}
+
+.pg-lb-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.pg-lb-img-wrap {
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 90vw;
+	max-height: 85vh;
+	animation: lb-zoom-in 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── LOADER STYLE ───────────────── */
+.pg-lb-loader {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 40px;
+	height: 40px;
+	border: 3px solid rgba(255, 255, 255, 0.1);
+	border-top-color: var(--olive);
+	border-radius: 50%;
+	z-index: 5;
+	animation: lb-spin 0.8s linear infinite;
+}
+
+@keyframes lb-spin {
+	to {
+		transform: translate(-50%, -50%) rotate(360deg);
+	}
+}
+
+.pg-lb-img {
+	max-width: 100%;
+	max-height: 70vh;
+	object-fit: contain;
+	border-radius: 4px;
+	box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+	transition: opacity 0.2s ease-in-out;
+	opacity: 1;
+}
+
+.pg-lb-img.switching {
+	opacity: 0;
+}
+
+.pg-lb-caption {
+	margin-top: 1.5rem;
+	text-align: center;
+	color: white;
+	max-width: 600px;
+}
+
+.pg-lb-title {
+	font-family: "Cormorant Garamond", serif;
+	font-size: 2.2rem;
+	font-weight: 500;
+	color: #f7f4ef;
+	line-height: 1.1;
+	margin-bottom: 1rem;
+}
+/* Controls & Navigation */
+.pg-lb-close {
+	position: absolute;
+	top: 2rem;
+	right: 2rem;
+	background: none;
+	border: none;
+	color: white;
+	font-size: 1.5rem;
+	cursor: pointer;
+	opacity: 0.5;
+	transition: opacity 0.3s;
+}
+
+.pg-lb-nav {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background: transparent;
+	border: none;
+	color: white;
+	padding: 1rem;
+	cursor: pointer;
+	opacity: 0.4;
+	transition: all 0.3s;
+}
+
+.pg-lb-prev {
+	left: 1rem;
+}
+.pg-lb-next {
+	right: 1rem;
+}
+
+.pg-lb-nav:hover,
+.pg-lb-close:hover {
+	opacity: 1;
+}
+
+/* Counter Positioning */
+.pg-lb-counter {
+	position: absolute;
+	top: 2rem;
+	left: 50%;
+	transform: translateX(-50%);
+	color: rgba(255, 255, 255, 0.5);
+	font-family: "DM Sans", sans-serif;
+	font-size: 0.8rem;
+	letter-spacing: 0.2em;
+}
+
+@keyframes lb-fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@keyframes lb-zoom-in {
+	from {
+		transform: scale(0.95);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
