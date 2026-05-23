@@ -1,6 +1,0 @@
-
-- Live updates card, NOW, What  im currently focused on, floating over side screen for readers to read
-- Something map-like background for location things
-- Reactive Typography
-- Lines Squiggle - Blobs
-- Back to top button on other pages also
