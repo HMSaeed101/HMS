@@ -67,7 +67,7 @@ export const photos = [
 	},
 	{
 		src: "https://res.cloudinary.com/dkpehrpdm/image/upload/q_auto/f_auto/v1779626992/yellow-flower_hw8pho.jpg",
-		caption: "Yellow flower",
+		caption: "Yellow Flower",
 		category: "Flora",
 		desc: "The soft, velvety layers of a blooming yellow flower.",
 		exif: "f/1.8 · 1/1200 · ISO 100",
@@ -127,16 +127,16 @@ export const photos = [
 	},
 	{
 		src: "https://res.cloudinary.com/dkpehrpdm/image/upload/q_auto/f_auto/v1779626974/tree-web_v2pcja.png",
-		caption: "Tree WEB",
+		caption: "Arboreal Lattice",
 		category: "Landscapes",
-		desc: "Ea id tempor nostrud aliqua amet quis reprehenderit ullamco officia mollit occaecat commodo.",
+		desc: "A close-up of skeletal branches against a clear sky, forming a natural, intricate pattern.",
 		exif: "f/11 · 1/125 · ISO 100",
 	},
 	{
 		src: "https://res.cloudinary.com/dkpehrpdm/image/upload/q_auto/f_auto/v1779626950/clouds_ip1g9t.jpg",
 		caption: "Just Like Our Thoughts",
 		category: "Landscapes",
-		desc: "Et duis cupidatat nisi aliqua adipisicing reprehenderit Lorem.",
+		desc: "Whispy clouds scattered across a vast blue canvas, mirroring the ephemeral nature of ideas.",
 		exif: "f/9.0 · 1/200 · ISO 100",
 	},
 ];

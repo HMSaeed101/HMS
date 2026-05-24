@@ -18,11 +18,11 @@ export const caseStudies = [
 		sections: [
 			{
 				heading: "The Challenge",
-				content: `Most beginners build "spaghetti code" where UI logic and data logic are tangled. My goal was to build a system that could grow without breaking, necessitating a clear separation of concerns.`,
+				content: `Standard imperative approaches often lead to tightly coupled logic, making long-term maintenance difficult. My objective was to engineer a scalable system by enforcing a strict separation of concerns.`,
 			},
 			{
 				heading: "Architecture: The MVC Pattern",
-				content: `I implemented a Model-View-Controller architecture. This isn't just a buzzword; it's a structural promise. The <strong>Model</strong> handles the data (books, users), the <strong>View</strong> handles the DOM, and the <strong>Controller</strong> acts as the bridge.`,
+				content: `I implemented a Model-View-Controller (MVC) architecture to ensure a robust structural foundation. The <strong>Model</strong> manages state and data persistence, the <strong>View</strong> handles dynamic UI rendering, and the <strong>Controller</strong> orchestrates the interaction between them.`,
 				diagram: `
                     <strong>Model:</strong> data.js (State Management)<br>
                     <strong>View:</strong> render.js (UI Components)<br>
@@ -31,7 +31,7 @@ export const caseStudies = [
 			},
 			{
 				heading: "Technical Highlight: Modular CSS",
-				content: `To avoid the "Global Namespace CSS" nightmare, I used a modular approach where each component (Navbar, Grid, Modal) has its own stylesheet, orchestrated through a single entry point.`,
+				content: `To prevent CSS global namespace collisions and maintainability issues, I adopted a modular style architecture. Each component (Navbar, Grid, Modal) maintains its own encapsulated stylesheet, all managed through a centralized entry point.`,
 				code: `/* main.css entry point */
 @import './base/rules.css';
 @import './components/nav.css';

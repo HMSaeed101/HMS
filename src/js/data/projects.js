@@ -10,7 +10,7 @@ export const projects = [
 	{
 		title: "Personal Finance Tracker",
 		tag: "Productivity",
-		desc: "A Progressive Offline Single User Web App made with Vanilla HTML, CSS, JS. Focusing on privacy and speed.",
+		desc: "A progressive offline-first web app built with Vanilla JS, focusing on data privacy and speed.",
 		img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800",
 		demo: "https://hmsaeed101.github.io/hms-tracker-v-1.0.0/",
 		code: "https://github.com/HMSaeed101/hms-tracker-v-1.0.0",

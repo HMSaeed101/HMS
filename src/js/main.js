@@ -52,9 +52,14 @@ function renderProjects(data) {
 		card.querySelector(".project-title").textContent = p.title;
 		card.querySelector(".project-desc").textContent = p.desc;
         const demoLink = card.querySelector(".demo-link");
+        const isExternal = p.demo.startsWith("http");
         demoLink.href = p.demo;
         demoLink.target = "_blank";
         demoLink.rel = "noopener noreferrer";
+        if (isExternal) {
+            demoLink.target = "_blank";
+            demoLink.rel = "noopener noreferrer";
+        }
         const codeLink = card.querySelector(".code-link");
         codeLink.href = p.code;
         codeLink.target = "_blank";

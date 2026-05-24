@@ -11,13 +11,13 @@ export const academics = [
 		degree: "Intermediate (Pre-Medical)",
 		school: "Jinnah Education System, Taxila",
 		desc: "Completed with distinction. Awarded merit scholarship for consecutive academic years.",
-		badge: "90% Marks",
+		badge: "Distinction (90%)",
 	},
 	{
 		year: "2020",
 		degree: "Matriculation (Science)",
 		school: "Jinnah Education System, Taxila",
 		desc: "Foundation in mathematics, physics and chemistry. Class representative and debate team captain.",
-		badge: "A+ Grade",
+		badge: "Grade A+",
 	},
 ];
