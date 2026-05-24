@@ -5,8 +5,8 @@
  * @param {Object} options
  * @param {string} options.pathPrefix - Prefix for links (e.g. '../')
  */
-export function initFooter({ pathPrefix = '' } = {}) {
-    const footerHTML = `
+export function initFooter({ pathPrefix = "" } = {}) {
+	const footerHTML = `
     <footer>
         <div class="container">
             <div class="footer-inner">
@@ -27,11 +27,10 @@ export function initFooter({ pathPrefix = '' } = {}) {
                     </a>
                 </div>
                 <p class="footer-copy">© 2026 Hafiz Muhammad Saeed. Built with care.</p>
-                <p class="footer-copy">© 2025 Hafiz Muhammad Saeed. Built with care.</p>
             </div>
         </div>
     </footer>
     `;
 
-    document.body.insertAdjacentHTML('beforeend', footerHTML);
+	document.body.insertAdjacentHTML("beforeend", footerHTML);
 }
