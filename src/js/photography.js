@@ -24,8 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
 	// ── Hero ──────────────────────────────────────────────────
 	const heroBg = document.getElementById("heroBg");
 	const heroBgPhoto = photos.find((p) => p.category === "Flora") || photos[0];
-	if (heroBgPhoto && heroBg) {
-		heroBg.style.backgroundImage = `url('../${heroBgPhoto.src}')`;
+	if (heroBgPhoto && heroBg)
+	{
+		heroBg.style.backgroundImage = `url('${heroBgPhoto.src}')`;
 		setTimeout(() => heroBg.classList.add("loaded"), 100);
 	}
 
@@ -115,32 +116,6 @@ function renderFilters(data) {
 		filterLeft.appendChild(btn);
 	});
 }
-
-// function renderGrid(grid, data) {
-// 	if (!grid) return;
-// 	grid.innerHTML = "";
-
-// 	data.forEach((photo, i) => {
-// 		const item = document.createElement("div");
-// 		item.className = "pg-item reveal";
-// 		item.dataset.category = photo.category || "";
-// 		item.dataset.index = i;
-// 		item.dataset.src = `../${photo.src}`;
-// 		item.dataset.caption = photo.caption;
-
-// 		item.innerHTML = `
-//             <img src="../${photo.src}" alt="${photo.caption}" loading="${i < 6 ? "eager" : "lazy"}" onload="this.classList.add('loaded')">
-//             <div class="pg-overlay">
-//                 <div class="pg-overlay-cat">${photo.category || ""}</div>
-//                 <div class="pg-overlay-caption">${photo.caption}</div>
-//                 ${photo.exif ? `<div class="pg-overlay-exif">${photo.exif}</div>` : ""}
-//                 ${photo.desc ? `<div class="pg-overlay-desc">${photo.desc}</div>` : ""}
-//             </div>
-//             <div class="pg-zoom-badge">…</div>
-//         `;
-// 		grid.appendChild(item);
-// 	});
-// }
 
 function renderGrid(grid, data) {
 	if (!grid) return;
