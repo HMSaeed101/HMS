@@ -5,3 +5,4 @@
 - Lines Squiggle - Blobs
 - Back to top button on other pages also
 - Using Cloudinary for Optimized Pics loading Speed
+- Add Doulingo Profile + Chess Profile In Hobbies Skills
