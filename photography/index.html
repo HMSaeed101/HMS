@@ -89,8 +89,7 @@
 			<div class="pg-hero-content">
 				<h1 class="pg-hero-title">Photo<em>graphy</em></h1>
 				<p class="pg-hero-sub">
-					Macro details, quiet flora, and the birds that don't stay
-					still — moments caught in Taxila and beyond.
+					Captured with Patience, Shared with Purpose.
 				</p>
 				<div class="pg-hero-stats">
 					<div class="pg-stat">
@@ -114,8 +113,21 @@
 						<span class="pg-filter-label">Filter by</span>
 						<!-- buttons injected by JS -->
 					</div>
-					<div class="pg-view-count">
-						Showing <span id="visibleCount">0</span> photos
+					<div class="pg-filter-right">
+						<div class="pg-view-switcher" id="viewSwitcher">
+							<button class="pg-view-btn active" data-view="rhythm" aria-label="Rhythm View (Masonry)">
+								<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"></rect><rect x="14" y="3" width="7" height="5"></rect><rect x="14" y="11" width="7" height="9"></rect><rect x="3" y="15" width="7" height="5"></rect></svg>
+							</button>
+							<button class="pg-view-btn" data-view="order" aria-label="Order View (Grid)">
+								<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+							</button>
+							<button class="pg-view-btn" data-view="focus" aria-label="Focus View (Cinematic)">
+								<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="14" x2="20" y2="14"/></svg>
+							</button>
+						</div>
+						<div class="pg-view-count">
+							Showing <span id="visibleCount">0</span> photos
+						</div>
 					</div>
 				</div>
 
@@ -147,7 +159,10 @@
 				<figure class="pg-lb-img-wrap" id="pgLbWrap">
 					<img class="pg-lb-img" id="lightboxImg" src="" alt="" />
 					<figcaption class="pg-lb-caption" id="pgLbCaption">
+						<div class="pg-lb-cat" id="pgLbCat"></div>
 						<h2 class="pg-lb-title" id="pgLbTitle"></h2>
+						<div class="pg-lb-exif" id="pgLbExif"></div>
+						<p class="pg-lb-desc" id="pgLbDesc"></p>
 					</figcaption>
 				</figure>
 			</div>

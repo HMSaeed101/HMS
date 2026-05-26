@@ -46,6 +46,29 @@ document.addEventListener("DOMContentLoaded", () => {
 	renderGrid(grid, photos);
 	updateVisibleCount(grid, visibleCount, pgEmpty);
 
+	// ── View Switcher Logic ──────────────────────────────────
+	const viewSwitcher = document.getElementById("viewSwitcher");
+	const savedView = localStorage.getItem("pgView") || "rhythm";
+
+	function setView(view) {
+		grid.dataset.view = view;
+		localStorage.setItem("pgView", view);
+
+		// Update button states
+		viewSwitcher.querySelectorAll(".pg-view-btn").forEach(btn => {
+			btn.classList.toggle("active", btn.dataset.view === view);
+		});
+	}
+
+	if (viewSwitcher) {
+		setView(savedView);
+		viewSwitcher.addEventListener("click", (e) => {
+			const btn = e.target.closest(".pg-view-btn");
+			if (!btn) return;
+			setView(btn.dataset.view);
+		});
+	}
+
 	// Filter logic
 	document.querySelector(".pg-filter-left").addEventListener("click", (e) => {
 		const btn = e.target.closest(".pg-filter-btn");
@@ -80,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			const photoData = photos[parseInt(item.dataset.index)];
 
 			openLightbox(
-				`../${photoData.src}`,
+				photoData.src,
 				photoData.caption,
 				index,
 				allItems,
@@ -137,7 +160,6 @@ function renderGrid(grid, data) {
                 ${photo.exif ? `<div class="pg-overlay-exif">${photo.exif}</div>` : ""}
                 ${photo.desc ? `<div class="pg-overlay-desc">${photo.desc}</div>` : ""}
             </div>
-            <div class="pg-zoom-badge">…</div>
         `;
 		grid.appendChild(item);
 	});

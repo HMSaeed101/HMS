@@ -15,6 +15,11 @@ export function initLightbox() {
 	let items = [];
 	const TRANSITION_SPEED = 200; // Match this with CSS transition duration
 
+	// Swipe detection variables
+	let touchStartX = 0;
+	let touchEndX = 0;
+	const SWIPE_THRESHOLD = 50;
+
 	// Centralized logic to update the title from various data sources
 	function updateTitle(item) {
 		if (!item) {
@@ -92,11 +97,33 @@ export function initLightbox() {
 		}
 	}
 
+	// ── SWIPE GESTURES ──────────────────────────────────────
+	function handleSwipe() {
+		const swipeDist = touchEndX - touchStartX;
+		if (Math.abs(swipeDist) > SWIPE_THRESHOLD) {
+			if (swipeDist > 0) {
+				navigate(-1); // Swipe Right -> Prev
+			} else {
+				navigate(1);  // Swipe Left -> Next
+			}
+		}
+	}
+
+	lightbox.addEventListener("touchstart", (e) => {
+		touchStartX = e.changedTouches[0].screenX;
+	}, { passive: true });
+
+	lightbox.addEventListener("touchend", (e) => {
+		touchEndX = e.changedTouches[0].screenX;
+		handleSwipe();
+	}, { passive: true });
+
+	// ── EVENT LISTENERS ─────────────────────────────────────
 	const closeBtn = document.getElementById("lightboxClose");
 	if (closeBtn) closeBtn.addEventListener("click", closeLightbox);
 
 	lightbox.addEventListener("click", (e) => {
-		if (e.target === lightbox) closeLightbox();
+		if (e.target === lightbox || e.target.classList.contains("pg-lb-inner")) closeLightbox();
 	});
 
 	if (prevBtn) {

@@ -48,7 +48,6 @@ function renderProjects(data) {
 		card.style.setProperty("--delay", i * 0.08 + "s");
 		card.querySelector("img").src = p.img;
 		card.querySelector("img").alt = p.title;
-		card.querySelector(".project-tag").textContent = p.tag;
 		card.querySelector(".project-title").textContent = p.title;
 		card.querySelector(".project-desc").textContent = p.desc;
 		const demoLink = card.querySelector(".demo-link");

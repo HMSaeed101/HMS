@@ -85,7 +85,31 @@
 	font-weight: 500;
 	color: #f7f4ef;
 	line-height: 1.1;
-	margin-bottom: 1rem;
+	margin-bottom: 0.5rem;
+}
+
+.pg-lb-cat {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--olive-lt);
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.pg-lb-exif {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    margin-top: 1rem;
+    font-family: "DM Sans", sans-serif;
+}
+
+.pg-lb-desc {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    font-style: italic;
+    margin-top: 0.5rem;
 }
 /* Controls & Navigation */
 .pg-lb-close {
