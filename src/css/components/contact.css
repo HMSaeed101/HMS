@@ -3,15 +3,15 @@
 .contact-grid {
 	display: grid;
 	grid-template-columns: 1fr; /* Mobile-First: Single column base */
-	gap: 4rem;
-	margin-top: 3rem;
+	gap: var(--space-lg);
+	margin-top: var(--space-lg);
 	align-items: start;
 }
 
 @media (min-width: 901px) {
     .contact-grid {
         grid-template-columns: 1fr auto; /* Desktop: Info and Socials side by side */
-        gap: clamp(2rem, 3vw, 8rem);
+        gap: clamp(var(--space-md), 3vw, var(--space-2xl));
         align-items: center;
     }
 }
@@ -19,49 +19,50 @@
 .contact-info {
 	display: flex;
 	flex-direction: column;
-	gap: 2.5rem;
+	gap: var(--space-md);
 }
+
 .contact-row {
 	display: flex;
 	align-items: center;
-	gap: 1.25rem;
+	gap: var(--space-md);
 }
 
 .contact-icon {
 	width: 52px;
 	height: 52px;
-	border-radius: 50%;
-	background: rgba(91, 107, 59, 0.07);
+	border-radius: var(--radius-full);
+	background: var(--color-overlay);
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	color: var(--olive);
+	color: var(--color-accent);
 	flex-shrink: 0;
-	transition:
-		background 0.2s,
-		color 0.2s;
+	transition: var(--transition);
 }
+
 .contact-icon:hover {
-	background: var(--olive);
-	color: #fff;
-	transform : scale(1.10);
-	transition: transform 0.21s ease;
+	background: var(--color-accent);
+	color: var(--white);
+	transform: scale(1.10);
 }
 
 .contact-meta p:first-child {
-	font-size: 0.68rem;
+	font-size: var(--fs-300);
 	letter-spacing: 0.12em;
 	text-transform: uppercase;
-	color: var(--ink-60);
+	color: var(--color-text-muted);
 }
+
 .contact-meta p:last-child {
 	font-weight: 500;
-	font-size: 0.95rem;
+	font-size: var(--fs-400);
+	color: var(--color-text);
 }
 
 .socials {
 	display: flex;
-	gap: 1rem;
+	gap: var(--space-sm);
     flex-wrap: wrap;
     justify-content: center; /* Mobile-First: Center socials on small screens */
 }
@@ -70,6 +71,6 @@
     .socials {
         justify-content: flex-start;
         flex-direction: column; /* Vertical list of social icons on desktop */
-        gap: 1.25rem;
+        gap: var(--space-md);
     }
 }

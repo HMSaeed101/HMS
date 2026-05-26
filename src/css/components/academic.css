@@ -1,45 +1,45 @@
 /* ── ACADEMIC ─────────────────────────────────────────────── */
 
 .academic-list {
-	margin-top: var(--fs-900);
+	margin-top: var(--space-xl);
 	display: flex;
 	flex-direction: column;
-	gap: 2rem; /* Increased gap for breathing room */
+	gap: var(--space-md);
 	position: relative;
 }
 
 /* Vertical timeline line - Shown on desktop */
 @media (min-width: 769px) {
     .academic-list {
-        padding-left: var(--fs-700);
+        padding-left: var(--space-lg);
     }
     
     .academic-list::before {
         content: "";
         position: absolute;
         left: 0;
-        top: 1.5rem;
-        bottom: 1.5rem;
+        top: var(--space-md);
+        bottom: var(--space-md);
         width: 2px;
         background: linear-gradient(
             to bottom,
-            var(--olive),
-            rgba(107, 124, 74, 0.1)
+            var(--color-accent),
+            var(--color-border-lt)
         );
-        border-radius: 99px;
+        border-radius: var(--radius-full);
     }
 }
 
 .academic-item {
 	display: flex;
     flex-direction: column;
-	background: var(--white);
-	border-radius: var(--radius-lg);
-	padding: 1.75rem;
-	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
-    border: 1px solid var(--ink-05);
-    border-left: 4px solid var(--olive); /* Strong visual anchor */
-	transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+	background: var(--color-surface);
+	border-radius: var(--radius);
+	padding: var(--space-md);
+	box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border-lt);
+    border-left: 4px solid var(--color-accent);
+	transition: var(--transition-lg);
 	position: relative;
 }
 
@@ -48,45 +48,45 @@
     .academic-item {
         display: grid;
         grid-template-columns: auto 1fr;
-        gap: 0 3rem;
-        padding: 2.5rem 3rem;
-        border-left: 1px solid var(--ink-05); /* Reset on desktop */
+        gap: 0 var(--space-lg);
+        padding: var(--space-lg);
+        border-left: 1px solid var(--color-border-lt); /* Reset on desktop */
     }
 
     .academic-item::before {
         content: "";
         position: absolute;
-        left: -1.75rem;
+        left: -1.25rem;
         top: 2.8rem;
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background: var(--olive);
-        border: 2px solid var(--warm-bg);
-        box-shadow: 0 0 0 2px var(--olive-lt);
+        width: 12px;
+        height: 12px;
+        border-radius: var(--radius-full);
+        background: var(--color-accent);
+        border: 2px solid var(--color-bg);
+        box-shadow: 0 0 0 2px var(--color-accent-lt);
         z-index: 2;
     }
 }
 
 .academic-item:hover {
 	transform: translateY(-6px);
-	box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
-    border-color: var(--olive-lt);
+	box-shadow: var(--shadow-lg);
+    border-color: var(--color-accent-lt);
 }
 
 /* YEAR - The subtle anchor */
 .academic-year {
 	font-family: "DM Sans", sans-serif;
-	font-size: 0.75rem;
+	font-size: var(--fs-300);
 	font-weight: 800;
-	color: var(--olive);
+	color: var(--color-accent);
 	line-height: 1;
-    margin-bottom: 1rem;
+    margin-bottom: var(--space-sm);
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    background: rgba(107, 124, 74, 0.08);
-    padding: 0.45rem 0.8rem;
-    border-radius: 6px;
+    background: var(--color-overlay);
+    padding: var(--space-2xs) var(--space-sm);
+    border-radius: var(--radiussm);
     align-self: flex-start;
 }
 
@@ -94,11 +94,11 @@
     .academic-year {
         background: none;
         padding: 0;
-        font-size: 2.5rem;
+        font-size: var(--fs-900);
         font-family: "Cormorant Garamond", serif;
-        color: var(--ink-10); /* Very subtle background feel */
+        color: var(--color-border); /* Very subtle background feel */
         margin-bottom: 0;
-        min-width: 100px;
+        min-width: 120px;
         align-self: auto;
     }
 }
@@ -106,48 +106,48 @@
 /* DEGREE - The clear Hero */
 .academic-degree {
 	font-family: "Cormorant Garamond", serif;
-	font-size: 1.85rem;
+	font-size: var(--fs-700);
 	font-weight: 700;
-	color: var(--ink);
+	color: var(--color-text);
     line-height: 1.1;
-    margin-bottom: 0.35rem;
+    margin-bottom: var(--space-2xs);
 }
 
 @media (min-width: 769px) {
     .academic-degree {
-        font-size: 2.4rem;
+        font-size: var(--fs-800);
     }
 }
 
 /* SCHOOL - The secondary context */
 .academic-school {
-	font-size: 1rem;
-	margin-bottom: 1.25rem;
+	font-size: var(--fs-400);
+	margin-bottom: var(--space-md);
 	font-weight: 500;
-    color: var(--olive);
+    color: var(--color-accent);
     font-style: italic;
 }
 
 /* DESC - The background detail */
 .academic-desc {
-	font-size: 0.95rem;
-	color: var(--ink-60);
+	font-size: var(--fs-400);
+	color: var(--color-text-muted);
 	line-height: 1.7;
-	margin-top: 1.25rem;
-    padding-top: 1.25rem;
-    border-top: 1px solid var(--ink-05);
+	margin-top: var(--space-md);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border-lt);
 }
 
 /* BADGE - The status indicator */
 .academic-badge {
 	display: inline-block;
-	background: var(--ink);
-	color: var(--white);
-	font-size: 0.65rem;
+	background: var(--color-text);
+	color: var(--color-surface);
+	font-size: var(--fs-300);
 	font-weight: 700;
-	padding: 0.35rem 1rem;
-	border-radius: 4px;
-	margin-top: 1.5rem;
+	padding: var(--space-2xs) var(--space-sm);
+	border-radius: var(--radiussm);
+	margin-top: var(--space-md);
     text-transform: uppercase;
     letter-spacing: 0.1em;
 }

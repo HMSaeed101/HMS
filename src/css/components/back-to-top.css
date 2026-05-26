@@ -2,24 +2,24 @@
 
 .back-to-top {
 	position: fixed;
-	bottom: 2rem;
-	right: 1rem;
+	bottom: var(--space-lg);
+	right: var(--space-md);
 	width: 3.5rem;
 	height: 3.5rem;
-	background: var(--olive);
-	color: white;
+	background: var(--color-accent);
+	color: var(--white);
 	border: none;
-	border-radius: 50%;
+	border-radius: var(--radius-full);
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
-	z-index: 99;
+	z-index: 150;
 	opacity: 0;
 	visibility: hidden;
-	transform: translateY(1rem);
-	transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+	transform: translateY(var(--space-md));
+	transition: var(--transition-lg);
+	box-shadow: var(--shadow-md);
 }
 
 .back-to-top.visible {
@@ -30,5 +30,6 @@
 
 .back-to-top:hover {
 	transform: scale(1.1) translateY(-3px);
-	filter: brightness(1.1);
+	box-shadow: var(--shadow-lg);
+	background: var(--color-accent-lt);
 }
