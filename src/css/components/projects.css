@@ -54,7 +54,14 @@
 .cs-hero-stats {
     display: flex;
     justify-content: center;
-    gap: 4rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+@media (min-width: 769px) {
+    .cs-hero-stats {
+        gap: 4rem;
+    }
 }
 
 .cs-stat {
@@ -102,7 +109,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2.5rem 0;
+    padding: 2rem 0;
     margin-bottom: 4rem;
     border-bottom: 1px solid var(--ink-10);
     flex-wrap: wrap;
@@ -146,195 +153,276 @@
     font-style: normal;
 }
 
-/* ── CASE STUDY LAYOUT ───────────────────────────────────── */
+/* ── CASE STUDY LAYOUT (The Curated Experience) ─────────── */
 
 .case-study {
     margin-bottom: 8rem;
+    padding-bottom: 8rem;
+    border-bottom: 1px solid var(--ink-05);
 }
-.case-study.hidden {
-    display: none;
+
+.case-study:last-of-type {
+    border-bottom: none;
 }
 
 .cs-grid {
     display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 5rem;
+    grid-template-columns: 1fr;
+    gap: 4rem;
     align-items: start;
 }
 
-/* Sidebar Meta */
+@media (min-width: 1024px) {
+    .cs-grid {
+        grid-template-columns: 320px 1fr;
+        gap: 6rem;
+    }
+}
+
+/* Sidebar Meta (Secondary Level) */
 .cs-meta {
-    position: sticky;
-    top: 6rem;
+    position: static;
+}
+
+@media (min-width: 1024px) {
+    .cs-meta {
+        position: sticky;
+        top: 8rem;
+    }
 }
 
 .cs-tag {
     display: inline-block;
-    font-size: 0.7rem;
-    font-weight: 700;
+    font-size: 0.65rem;
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.2em;
     color: var(--olive);
     margin-bottom: 1rem;
+    background: rgba(107, 124, 74, 0.08);
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
 }
 
 .cs-sidebar-title {
     font-family: "Cormorant Garamond", serif;
-    font-size: 2.8rem;
-    line-height: 1.1;
-    margin-bottom: 1.25rem;
+    font-size: 2.5rem;
+    line-height: 1;
+    margin-bottom: 1.5rem;
     color: var(--ink);
+    font-weight: 700;
+}
+
+@media (min-width: 1024px) {
+    .cs-sidebar-title {
+        font-size: 3.2rem;
+    }
 }
 
 .cs-sidebar-desc {
     font-size: 1rem;
     color: var(--ink-60);
-    line-height: 1.6;
-    margin-bottom: 2rem;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    font-style: italic;
 }
 
 .cs-tech-list {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
 }
 
 .tech-badge {
-    font-size: 0.75rem;
-    background: var(--warm-bg);
+    font-size: 0.7rem;
+    background: var(--white);
     border: 1px solid var(--ink-10);
-    padding: 0.3rem 0.8rem;
-    border-radius: 6px;
+    padding: 0.4rem 0.9rem;
+    border-radius: 99px;
     color: var(--ink-60);
+    font-weight: 600;
+    letter-spacing: 0.02em;
 }
 
-/* Content Area */
+/* Content Area (Dominant Level) */
 .cs-content {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 5rem; /* Sectional Rhythm */
+}
+
+.cs-section {
+    position: relative;
 }
 
 .cs-section h3 {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 1.8rem;
-    margin-bottom: 1.25rem;
-    color: var(--ink);
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 2rem;
+    color: var(--olive);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cs-section h3::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--ink-10);
 }
 
 .cs-section p {
-    font-size: 1.05rem;
+    font-size: 1.15rem; /* Increased for premium readability */
     line-height: 1.8;
-    color: var(--ink-60);
+    color: var(--ink-80);
+    max-width: 700px;
 }
 
+/* Visual Blocks */
 .cs-diagram {
     background: var(--white);
-    border: 1px solid var(--ink-10);
-    padding: 2rem;
-    border-radius: var(--radiusmd);
-    margin-top: 2rem;
-    font-size: 0.9rem;
-    line-height: 1.6;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    border: 1px solid var(--ink-05);
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    margin-top: 3rem;
+    font-size: 1rem;
+    line-height: 1.7;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.04);
+    border-left: 4px solid var(--olive-lt);
 }
 
 .cs-code {
-    margin-top: 2rem;
-    background: #1a1814;
-    color: #d4d4d4;
-    padding: 1.5rem;
-    border-radius: 12px;
+    margin-top: 3rem;
+    background: #0f0e0c;
+    color: #e0e0e0;
+    padding: 2rem;
+    border-radius: 16px;
     font-family: "Fira Code", monospace;
     font-size: 0.85rem;
     overflow-x: auto;
-    border: 1px solid rgba(255,255,255,0.05);
+    border: 1px solid rgba(181, 149, 106, 0.1);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.2);
 }
 
 /* ── HOME PAGE PROJECTS GRID ─────────────────────────────── */
 
 .projects-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-	gap: var(--fs-800);
+	grid-template-columns: 1fr;
+	gap: 2rem;
 	margin-top: var(--fs-900);
+}
+
+@media (min-width: 641px) {
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: var(--fs-800);
+    }
 }
 
 .project-card {
 	background: var(--white);
-	border-radius: var(--radius);
+	border-radius: var(--radius-lg);
 	overflow: hidden;
-	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
-	transition:
-		transform 0.25s,
-		box-shadow 0.25s;
+	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+    border: 1px solid var(--ink-05);
+	transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 	transition-delay: var(--delay, 0s);
     display: flex;
     flex-direction: column;
     height: 100%;
 }
 
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+    border-color: var(--olive-lt);
+}
+
 .project-img-wrap {
 	position: relative;
 	overflow: hidden;
-    border-radius: var(--radiusmd);
 }
+
 .project-img-wrap img {
 	width: 100%;
-	height: 240px;
+	height: 220px;
 	object-fit: cover;
-	transition: transform 0.4s;
+	transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@media (min-width: 769px) {
+    .project-img-wrap img {
+        height: 240px;
+    }
+}
+
+.project-card:hover .project-img-wrap img {
+    transform: scale(1.05);
 }
 
 .project-body {
-	padding: 0.8rem 2rem 1.4rem;
+	padding: 1.5rem;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
 
+@media (min-width: 769px) {
+    .project-body {
+        padding: 2rem;
+    }
+}
+
 .project-title {
 	font-family: "Cormorant Garamond", serif;
-	font-size: var(--fs-700);
+	font-size: 1.75rem;
 	font-weight: 700;
-	margin-bottom: var(--fs-300);
+	margin-bottom: 0.5rem;
 	color: var(--ink);
+    line-height: 1.2;
+}
+
+@media (min-width: 769px) {
+    .project-title {
+        font-size: var(--fs-700);
+    }
 }
 
 .project-desc {
-	font-size: var(--fs-300);
+	font-size: 0.95rem;
 	color: var(--ink-60);
-	line-height: 1.7;
-    margin-bottom: var(--fs-300);
+	line-height: 1.6;
+    margin-bottom: 1.5rem;
 }
 
 .project-links {
 	display: flex;
-	gap: 0.75rem;
-	margin-top: 1.5rem;
-    justify-content: space-between;
+	gap: 1.25rem;
     align-items: center;
     margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--ink-05);
 }
 
 .project-link {
-	font-size: var(--fs-300);
-	font-weight: 500;
+	font-size: 0.85rem;
+	font-weight: 600;
 	color: var(--olive);
 	display: flex;
 	align-items: center;
 	gap: 0.4rem;
-	transition: opacity 0.2s;
+	transition: all 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
-/* Responsive Grid Adjustments */
-@media (max-width: 900px) {
-    .cs-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-    .cs-meta {
-        position: static;
-    }
+.project-link:hover {
+    color: var(--ink);
+    transform: translateX(3px);
 }

@@ -1,28 +1,40 @@
 /* ── HOBBIES GRID ─────────────────────────────────────────── */
 .hobbies-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-template-columns: 1fr; /* Mobile-First: Single column */
 	gap: 1.5rem;
 	margin-top: 3rem;
 }
 
+@media (min-width: 641px) {
+    .hobbies-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
 .hobby-card {
 	background: var(--white);
-	padding: 2rem;
-	border-radius: var(--radiussm);
-	border: 1px solid var(--ink-10);
+	padding: 1.5rem; /* Mobile-First: Balanced padding */
+	border-radius: var(--radius-lg);
+	border: 1px solid var(--ink-05);
 	display: flex;
 	align-items: center;
 	gap: 1.25rem;
-	transition: var(--transition);
+	transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 	position: relative;
 	overflow: hidden;
 }
 
+@media (min-width: 769px) {
+    .hobby-card {
+        padding: 2rem;
+    }
+}
+
 .hobby-card:hover {
-	border-color: var(--olive);
-	transform: transform(1.1);
-	box-shadow: 0 12px 30px -10px var(--box-shadow);
+	border-color: var(--olive-lt);
+	transform: translateY(-5px);
+	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
 }
 
 .hobby-card.main-hub {
@@ -35,7 +47,7 @@
 
 .hobby-card.main-hub .serif {
 	color: var(--white);
-	font-size: 2.5rem;
+	font-size: 2.2rem;
 	margin: 0;
 	line-height: 1;
 }
@@ -52,16 +64,24 @@
 }
 
 .hobby-icon {
-	width: 54px;
-	height: 54px;
+	width: 50px; /* Mobile-First size */
+	height: 50px;
 	background: var(--ink-10);
-	border-radius: 14px;
+	border-radius: 12px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	color: var(--olive);
 	flex-shrink: 0;
-	transition: var(--transition);
+	transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@media (min-width: 769px) {
+    .hobby-icon {
+        width: 54px;
+        height: 54px;
+        border-radius: 14px;
+    }
 }
 
 .hobby-card:hover .hobby-icon {
@@ -76,22 +96,16 @@
 }
 
 .hobby-info h4 {
-	font-size: 1.15rem;
+	font-size: 1.1rem;
 	margin: 0;
 	color: var(--ink);
 	font-weight: 600;
 }
 
 .hobby-info span {
-	font-size: 0.8rem;
+	font-size: 0.75rem;
 	color: var(--ink-40);
 	text-transform: uppercase;
 	letter-spacing: 0.08em;
-	font-weight: 500;
-}
-
-@media (max-width: 768px) {
-	.hobbies-grid {
-		grid-template-columns: 1fr;
-	}
+	font-weight: 600;
 }
